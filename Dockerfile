@@ -8,5 +8,4 @@
 
 FROM eclipse/stack-base:ubuntu
 USER root
-ADD https://get.docker.com/builds/Linux/x86_64/docker-latest /usr/bin/docker
-RUN chmod +x /usr/bin/docker
+RUN apt-get update && apt-get install -y docker.io && rm -rf /var/lib/apt/lists/*
